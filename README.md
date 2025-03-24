@@ -1,2 +1,2 @@
-# Frontend_WebShopAssignment
+# Course: Frontend – WebShopAssignment
 Nackademin Frontend course assignment to create a simple web shop with HTML, CSS and JS, using an API as content source.
