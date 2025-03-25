@@ -11,8 +11,7 @@
     <h1 class="container text-center mt-5 ">Beställ produkt</h1>
 
     <div class="container-sm">
-        
-        <form>
+        <form id="orderForm">
 
             <div class="mb-2 ">
                 <label class="form-label">Namn:</label>
@@ -46,9 +45,31 @@
             </div>
 
 
-            <button type="submit" id="OrderBtn" class="btn btn-primary w-100  mt-4">Skicka beställning</button>
-
+            <button type="submit" id="OrderBtn" class="btn btn-primary w-100 mt-4">Skicka beställning</button>
         </form>
+        
+        <div id="successAlert" class="alert alert-success mt-3" role="alert" style="display: none;">
+            Beställningen genomförd!
+        </div>
     </div>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (this.checkValidity()) {
+                const successAlert = document.getElementById('successAlert');
+                successAlert.style.display = 'block';
+                successAlert.style.opacity = '0';
+                
+                let opacity = 0;
+                const fadeIn = setInterval(() => {
+                    opacity += 0.1;
+                    successAlert.style.opacity = opacity;
+                    if (opacity >= 1) clearInterval(fadeIn);
+                }, 50);
+            }
+        });
+    </script>
 </body>
 </html>
