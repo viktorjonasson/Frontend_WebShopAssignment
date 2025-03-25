@@ -11,39 +11,44 @@
     <h1 class="container text-center mt-5 ">Beställ produkt</h1>
 
     <div class="container-sm">
-        <form id="orderForm">
+        <form id="orderForm" novalidate>
 
             <div class="mb-2 ">
                 <label class="form-label">Namn:</label>
-                <input type="text" id="name" class="form-control " required minlength="2" maxlength="50">
+                <input type="text" id="name" class="form-control " required>
+                <div class="text-danger error-message"></div>
             </div>
         
             <div class="mb-2">
                 <label  class="form-label">E-post:</label>
-                <input type="email" id="email" class="form-control " required maxlength="50">
+                <input type="email" id="email" class="form-control " required>
+                <div class="text-danger error-message"></div>
             </div>
 
             <div class="mb-2">
                 <label class="form-label">Telefon:</label>
-                <input type="tel" id="phone" class="form-control " required maxlength="50">
+                <input type="tel" id="phone" class="form-control " required>
+                <div class="text-danger error-message"></div>
             </div>
             
             
             <div class="mb-3">
-                <label  class="form-label">Gatuadress:</label>
-                <input type="text" id="address" class="form-control " required minlength="2" maxlength="50">
+                <label class="form-label">Gatuadress:</label>
+                <input type="text" id="street" class="form-control " required>
+                <div class="text-danger error-message"></div>
             </div>
         
             <div class="mb-3">
                 <label class="form-label">Postnummer:</label>
-                <input type="text" id="postcode" class="form-control " required minlength="5" maxlength="5">
+                <input type="text" id="postcode" class="form-control " required>
+                <div class="text-danger error-message"></div>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Ort:</label>
-                <input type="text" id="address" class="form-control " required minlength="2" maxlength="50">
+                <input type="text" id="city" class="form-control " required>
+                <div class="text-danger error-message"></div>
             </div>
-
 
             <button type="submit" id="OrderBtn" class="btn btn-primary w-100 mt-4">Skicka beställning</button>
         </form>
@@ -52,24 +57,6 @@
             Beställningen genomförd!
         </div>
     </div>
-
-    <script>
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (this.checkValidity()) {
-                const successAlert = document.getElementById('successAlert');
-                successAlert.style.display = 'block';
-                successAlert.style.opacity = '0';
-                
-                let opacity = 0;
-                const fadeIn = setInterval(() => {
-                    opacity += 0.1;
-                    successAlert.style.opacity = opacity;
-                    if (opacity >= 1) clearInterval(fadeIn);
-                }, 50);
-            }
-        });
-    </script>
+    <script src="js/form-validation.js"></script>
 </body>
 </html>
