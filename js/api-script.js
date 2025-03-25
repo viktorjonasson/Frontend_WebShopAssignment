@@ -62,6 +62,7 @@ function visaProdukter(produkter) {
 
         beställKnapp.addEventListener("click", e => {
             location.href = "bestallning.html";
+            sessionStorage.setItem('chosenProduct', JSON.stringify(produkten));
         });
 
 
