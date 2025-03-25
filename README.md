@@ -1,6 +1,6 @@
 # Course: Frontend – Web Shop Assignment
-Nackademin Frontend course assignment to create a simple web shop with HTML, CSS and JS, using an API as content source.
-# Skapa en webbapplikation
+Nackademin Frontend course assignment to create a simple web shop app with HTML, CSS and JS, using an API as content source.
+# Brief:
 
 *OBS! Denna uppgift utförs i grupper (3–5 deltagare per grupp)*
 
