@@ -37,6 +37,11 @@ function visaProdukter(produkter) {
         titel.textContent = produkten.title; 
         titel.classList.add("text-center", "mb-5", "px-2"); 
 
+        //kategori
+        let kategori = document.createElement("p");
+        kategori.textContent = produkten.category; 
+        kategori.classList.add("text-decoration-underline", "px-2", "text-start");
+
 
         // Hämta och skapa bilden från "fakestoreapi"
         let bild = document.createElement("img");
@@ -47,7 +52,7 @@ function visaProdukter(produkter) {
 
         // Priset
         let pris = document.createElement("p");
-        pris.textContent = produkten.price + " SEK";
+        pris.textContent = produkten.price + "$";
         pris.classList.add("fw-bold", "mb-3"); 
 
         // Beställ btn
@@ -69,6 +74,7 @@ function visaProdukter(produkter) {
         pris_Kanpp_Bild.appendChild(bildDiv);
         pris_Kanpp_Bild.appendChild(pris_Knapp);
 
+        enskildProdukt.appendChild(kategori) 
         enskildProdukt.appendChild(titel); 
         enskildProdukt.appendChild(pris_Kanpp_Bild);
 
