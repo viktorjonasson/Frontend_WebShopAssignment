@@ -44,7 +44,7 @@ function visaProdukter(produkter) {
         let beskrivning = document.createElement("p");
         beskrivning.textContent = produkten.description;
         beskrivning.id = "beskrivning";
-        beskrivning.classList.add("text-muted", "small", "px-2", "d-md-block", "d-none", "overflow-hidden");
+        beskrivning.classList.add("text-muted", "small", "px-2", "d-md-block", "d-none", "overflow-visible");
 
         //kategori
         let kategori = document.createElement("p");
@@ -56,7 +56,7 @@ function visaProdukter(produkter) {
         let bild = document.createElement("img");
         bild.id = "produktbild";
         bild.src = produkten.image;
-        bild.classList.add("img-fluid");
+        bild.classList.add("img-fluid", "mx-3");
 
 
         // Priset
@@ -79,7 +79,8 @@ function visaProdukter(produkter) {
 
         //Bild & text
         let vänsterDiv = document.createElement("div");
-        vänsterDiv.className = "d-flex align-items-start justify-content-center mb-4";
+        vänsterDiv.className = "d-flex align-items-start justify-content-center mb-2";
+        vänsterDiv.id = "kort-produkt"
         vänsterDiv.appendChild(bild);
         vänsterDiv.appendChild(beskrivning);
         //vänsterDiv.style.flex = "1";
