@@ -17,7 +17,7 @@ function visaProdukter(produkter) {
 
         // En produkt div
         let enskildProdukt = document.createElement("div");
-        enskildProdukt.className = "card d-flex mb-4 p-3 col-12 col-md-5 mx-auto border shadow-lg justify-content-between";
+        enskildProdukt.className = "card d-flex mb-4 p-3 col-12 col-md-5 col-xl-4 mx-auto border shadow-lg justify-content-between";
 
         // flyttade ner den till "layout-delen" - Andy
         // // Div pris och Kanpp och bild
@@ -43,24 +43,19 @@ function visaProdukter(produkter) {
         // Beskrivning
         let beskrivning = document.createElement("p");
         beskrivning.textContent = produkten.description;
+        beskrivning.id = "beskrivning";
         beskrivning.classList.add("text-muted", "small", "px-2", "d-md-block", "d-none", "overflow-hidden");
-
-        beskrivning.style.maxWidth = "800"
-        beskrivning.style.maxHeight = "140px"
-        beskrivning.style.wordBreak = "break-word";
-        beskrivning.style.marginLeft = "25px";
-
 
         //kategori
         let kategori = document.createElement("p");
-        kategori.textContent = produkten.category; 
+        kategori.textContent = produkten.category;
         kategori.classList.add("text-decoration-underline", "px-2", "text-start");
 
 
         // Hämta och skapa bilden från "fakestoreapi"
         let bild = document.createElement("img");
+        bild.id = "produktbild";
         bild.src = produkten.image;
-        bild.width = 100;
         bild.classList.add("img-fluid");
 
 

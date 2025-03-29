@@ -1,0 +1,15 @@
+#beskrivning {
+    max-width: 800px;
+    max-height: 140px;
+    word-break: break-word;
+    margin-left: "25px";
+}
+
+#produktbild {
+    max-width: 100px;
+
+}
+
+#img {
+    min-width: 100px;
+}
