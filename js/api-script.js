@@ -17,7 +17,7 @@ function visaProdukter(produkter) {
 
         // En produkt div
         let enskildProdukt = document.createElement("div");
-        enskildProdukt.className = "mb-4 p-3 border shadow-lg";
+        enskildProdukt.className = "card d-flex mb-4 p-3 col-12 col-md-5 mx-auto border shadow-lg justify-content-between";
 
         // flyttade ner den till "layout-delen" - Andy
         // // Div pris och Kanpp och bild
@@ -26,7 +26,7 @@ function visaProdukter(produkter) {
 
         // div till bild
         let bildDiv = document.createElement("div");
-        bildDiv.className = "d-flex "; 
+        bildDiv.className = "d-flex"; 
 
 
         // flyttade ner den till "layout-delen" - Andy
@@ -38,14 +38,15 @@ function visaProdukter(produkter) {
         // Namnet
         let titel = document.createElement("h3");
         titel.textContent = produkten.title; 
-        titel.classList.add("text-center", "mb-5", "px-2");
+        titel.classList.add("text-center", "mb-4", "px-2");
 
         // Beskrivning
         let beskrivning = document.createElement("p");
         beskrivning.textContent = produkten.description;
-        beskrivning.classList.add("text-muted", "small", "px-2");
+        beskrivning.classList.add("text-muted", "small", "px-2", "d-md-block", "d-none", "overflow-hidden");
 
         beskrivning.style.maxWidth = "800"
+        beskrivning.style.maxHeight = "140px"
         beskrivning.style.wordBreak = "break-word";
         beskrivning.style.marginLeft = "25px";
 
@@ -81,30 +82,31 @@ function visaProdukter(produkter) {
 
         //Lägg till (gör om lite av placeringen, sparat förra dock) - Andy
 
-        //Vänstersida
+        //Bild & text
         let vänsterDiv = document.createElement("div");
-        vänsterDiv.className = "d-flex align-items-start";
+        vänsterDiv.className = "d-flex align-items-start justify-content-center mb-4";
         vänsterDiv.appendChild(bild);
         vänsterDiv.appendChild(beskrivning);
-        vänsterDiv.style.flex = "1";
+        //vänsterDiv.style.flex = "1";
 
-        //Högersida
+        //Knapp & pris
         let pris_Knapp = document.createElement("div");
         pris_Knapp.className = "d-flex flex-column mx-3"
         pris_Knapp.appendChild(pris);
         pris_Knapp.appendChild(beställKnapp);
-        pris_Knapp.style.flex = "0 0 150px"
+        //pris_Knapp.style.flex = "0 0 150px"
 
         //Raden vänster + höger
         let pris_Kanpp_Bild = document.createElement("div");
-        pris_Kanpp_Bild.className = "d-flex flex-wrap align-items-center justify-content-between";
+        pris_Kanpp_Bild.className = "d-flex flex-wrap align-items-center justify-content-center";
         pris_Kanpp_Bild.appendChild(vänsterDiv)
-        pris_Kanpp_Bild.appendChild(pris_Knapp)
+        //pris_Kanpp_Bild.appendChild(pris_Knapp)
 
         //Hela diven
         enskildProdukt.appendChild(kategori);
         enskildProdukt.appendChild(titel);
         enskildProdukt.appendChild(pris_Kanpp_Bild);
+        enskildProdukt.appendChild(pris_Knapp)
 
         indexDiven.appendChild(enskildProdukt);
 
