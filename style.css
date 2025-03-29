@@ -1,4 +1,4 @@
-#beskrivning {
+.beskrivning {
     max-width: 800px;
     height: 160px;
     word-break: break-word;
@@ -6,11 +6,7 @@
     mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
-#beskrivning::after {
-        opacity: 0.5;
-}
-
-#produktbild {
+.produktbild {
     max-width: 100px;
     max-height: 160px;
 }
@@ -19,7 +15,11 @@
     min-width: 100px;
 }
 
-#kort-produkt:hover {
+.kort-produkt:hover {
     cursor: pointer;
 }
 
+.card {
+    max-width: 350px;
+}
+  
