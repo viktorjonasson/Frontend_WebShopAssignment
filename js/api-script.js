@@ -15,25 +15,14 @@ function visaProdukter(produkter) {
     enskildProdukt.className =
       "card d-flex mb-4 p-3 col-12 col-md-5 col-xl-4 mx-auto border shadow-lg justify-content-between";
 
-    // flyttade ner den till "layout-delen" - Andy
-    // // Div pris och Kanpp och bild
-    // let pris_Kanpp_Bild = document.createElement("div");
-    // pris_Kanpp_Bild.className = "d-flex align-items-center justify-content-between";
-
     // div till bild
     let bildDiv = document.createElement("div");
     bildDiv.className = "d-flex";
-
-    // flyttade ner den till "layout-delen" - Andy
-    // //  Div till Pris o Knapp
-    // let pris_Knapp = document.createElement("div");
-    // pris_Knapp.className = "d-flex flex-column mx-3";
 
     // Namnet
     let titel = document.createElement("h3");
     titel.textContent = produkten.title;
     titel.classList.add("text-center", "mb-4", "px-2");
-    titel.id = "titel-" + i;
 
     // Beskrivning
     let beskrivning = document.createElement("p");
@@ -53,7 +42,6 @@ function visaProdukter(produkter) {
     let kategori = document.createElement("p");
     kategori.textContent = produkten.category;
     kategori.classList.add("text-decoration-underline", "px-2", "text-start");
-    kategori.id = "kategori-" + i;
 
     // Hämta och skapa bilden från "fakestoreapi"
     let bild = document.createElement("img");
@@ -69,7 +57,7 @@ function visaProdukter(produkter) {
     // Beställ btn
     let beställKnapp = document.createElement("button");
     beställKnapp.textContent = "Beställ";
-    beställKnapp.className = "btn btn-primary";
+    beställKnapp.className = "btn";
 
     beställKnapp.addEventListener("click", (e) => {
       location.href = "bestallning.html";
@@ -81,7 +69,7 @@ function visaProdukter(produkter) {
     //Bild & text
     let bild_Beskrivning = document.createElement("div");
     bild_Beskrivning.className =
-      "d-flex align-items-start justify-content-center mb-2 kort-produkt";
+      "d-flex align-items-start justify-content-center mb-2 produktinfo";
 
     bild_Beskrivning.appendChild(bild);
     bild_Beskrivning.appendChild(beskrivning);
@@ -91,16 +79,8 @@ function visaProdukter(produkter) {
     //Knapp & pris
     let pris_Knapp = document.createElement("div");
     pris_Knapp.className = "d-flex flex-column mx-3";
-    pris_Knapp.id = "order-" + i;
     pris_Knapp.appendChild(pris);
     pris_Knapp.appendChild(beställKnapp);
-    //pris_Knapp.style.flex = "0 0 150px"
-
-    //Raden vänster + höger
-    //let pris_Kanpp_Bild = document.createElement("div");
-    //pris_Kanpp_Bild.className = "d-flex flex-wrap align-items-center justify-content-center";
-    //pris_Kanpp_Bild.appendChild(vänsterDiv)
-    //pris_Kanpp_Bild.appendChild(pris_Knapp)
 
     //Hela diven
     enskildProdukt.appendChild(kategori);
