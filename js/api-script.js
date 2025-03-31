@@ -92,14 +92,17 @@ function visaProdukter(produkter) {
   }
 }
 
+//Visar hela beskrivningen
 function visaBeskrivning(i) {
-  if (document.getElementById("bild-" + i).style.display !== "none") {
-    document.getElementById("bild-" + i).style.display = "none";
-    document.getElementById("beskrivning-" + i).classList.remove("beskrivning");
-    document.getElementById("beskrivning-" + i).classList.remove("d-none");
+  let bild = document.getElementById("bild-" + i);
+  let beskrivning = document.getElementById("beskrivning-" + i);
+  if (bild.style.display !== "none") {
+    bild.style.display = "none";
+    beskrivning.classList.remove("beskrivning");
+    beskrivning.classList.remove("d-none");
   } else {
-    document.getElementById("bild-" + i).style.display = "block";
-    document.getElementById("beskrivning-" + i).classList.add("beskrivning");
-    document.getElementById("beskrivning-" + i).classList.add("d-none");    
+    bild.style.display = "block";
+    beskrivning.classList.add("beskrivning");
+    beskrivning.classList.add("d-none");    
   }
 }
