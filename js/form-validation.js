@@ -3,9 +3,6 @@ document.getElementById("orderForm").addEventListener("submit", function (event)
 
     let isValid = true;
 
-    // Tar bort tidigare felmeddelanden när anv. klickar på skicka igen
-    document.querySelectorAll(".error-message").forEach((element) => (element.textContent = ""));
-
     // Sparar formulärvärden
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
