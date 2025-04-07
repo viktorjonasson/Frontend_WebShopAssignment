@@ -1,12 +1,12 @@
 document.getElementById("orderForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission if input is not correct
+    event.preventDefault(); // Undviker att skicka formulär om input är felaktig
 
     let isValid = true;
 
-    // Clear previous error messages
+    // Tar bort tidigare felmeddelanden när anv. klickar på skicka igen
     document.querySelectorAll(".error-message").forEach((element) => (element.textContent = ""));
 
-    // Form values
+    // Sparar formulärvärden
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const phone = document.getElementById("phone").value.trim();
@@ -14,12 +14,12 @@ document.getElementById("orderForm").addEventListener("submit", function (event)
     const postcode = document.getElementById("postcode").value.trim();
     const city = document.getElementById("city").value.trim();
 
-    // Error message function (inserts div content in HTML)
+    // Visar feltexten, generell funktion
     function showError(inputId, message) {
         const inputField = document.getElementById(inputId);
-        const errorDiv = inputField.nextElementSibling; // Select the error message div
+        const errorDiv = inputField.nextElementSibling;
         errorDiv.textContent = message;
-        inputField.classList.add("is-invalid"); // Add Bootstrap invalid class
+        inputField.classList.add("is-invalid"); // Bootstrap-klass
         isValid = false;
     }
 
@@ -27,10 +27,10 @@ document.getElementById("orderForm").addEventListener("submit", function (event)
         let inputField = document.getElementById(inputId);
         let errorDiv = inputField.nextElementSibling;
         errorDiv.textContent = "";
-        inputField.classList.remove("is-invalid"); // Remove Bootstrap invalid class
+        inputField.classList.remove("is-invalid");
     }
 
-    // Helper functions for validation
+    // Hjälpfunktioner för validering med regexp
     function validateEmail(email) {
         const regEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regEx.test(email);
@@ -42,7 +42,7 @@ document.getElementById("orderForm").addEventListener("submit", function (event)
     }
 
     function validatePostcode(postcode) {
-        const regEx = /^(\d{5}|\d{3}\s\d{2})$/; // Accepts both 12345 and 123 45
+        const regEx = /^(\d{5}|\d{3}\s\d{2})$/; // Godkänner både 12345 och 123 45
         return regEx.test(postcode);
     }
 
@@ -50,7 +50,7 @@ document.getElementById("orderForm").addEventListener("submit", function (event)
         return !(input.length < 2 || input.length > 50);
     }
 
-    // Validation
+    // Valideringsfunktioner (anropar hjälpfunktioner)
     if (!validateStringLength(name)) showError("name", "Namnet måste vara minst 2 tecken och max 50 tecken.");
     else clearError("name");
 
@@ -69,7 +69,7 @@ document.getElementById("orderForm").addEventListener("submit", function (event)
     if (!validateStringLength(city)) showError("city", "Ort måste vara minst 2 tecken och max 50 tecken.");
     else clearError("city");
 
-    // If valid, submit form
+    // Om allt är okej, skickas formuläret
     if (isValid) {
         const successAlert = document.getElementById('successAlert');
         successAlert.style.display = 'block';
